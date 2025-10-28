@@ -93,7 +93,7 @@ _Yet another way:_ Use two iterators, one to traverse the loop element by elemen
 _To merge two sorted lists into a single sorted list:_
   - Look at the first element in each list.
   - Take the smaller of the two off the front of its old list and put it at the end of a new (merged) list.
-  - Repeat this until both one of the old lists is empty, at which point you can append the remainder of the other original list to the new list.
+  - Repeat this until one of the old lists is empty, at which point you can append the remainder of the other original list to the new list.
   - If the original lists were sorted, and you always take the smallest element available, then the resulting list will also be sorted. (You might want to convince yourself of this fact before continuing.)
 
 _Note: the **key operation** here is the merging of two sorted lists. Probably you will want to develop a method for this and test it thoroughly before tackling the full program._
