@@ -1,3 +1,6 @@
+import java.util.Collections;
+import java.util.ListIterator;
+
 public class SelectionSort {
   
   public static CardPile sort(CardPile unsorted, SortRecorder record) {
@@ -18,7 +21,43 @@ public class SelectionSort {
     //        record.add(unsorted); // the unsorted pile
     // ***********************************************************
 
+    while (!unsorted.isEmpty()) {
+      ListIterator<Card> scanner = unsorted.listIterator();
+      Card smallestCard = scanner.next();
+
+      while (scanner.hasNext()) {
+        Card current = scanner.next();
+        if (smallestCard.compareTo(current) > 0) {
+          smallestCard = current;
+        }
+      }
+
+      unsorted.remove(smallestCard);
+      sorted.add(smallestCard);
+
+      record.next();
+      record.add(unsorted);
+      record.next();
+      record.add(sorted);
+    }
+
     // return the sorted result here
     return sorted;
+  }
+
+  public static void main(String args[]) {
+    SortRecorder recorder = new SortRecorder();
+
+    Card.loadImages(recorder);
+    CardPile cards = new CardPile(Card.newDeck(true), 2, 2);
+
+    cards = cards.split(cards.get(39));
+    Collections.shuffle(cards);
+
+    cards = SelectionSort.sort(cards, recorder);    
+
+    System.out.println(cards);
+
+    recorder.display("Card Sort Demo: SelectionSort");
   }
 }

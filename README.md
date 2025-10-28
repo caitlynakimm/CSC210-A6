@@ -8,6 +8,8 @@ Programming Partner Name (if you'd like to be graded together):
 Other Collaborators (and kudos to helpful members of the class):
 
 Any references used besides JavaDoc and course materials:
+- https://stackoverflow.com/questions/2102499/iterating-through-a-list-in-reverse-order-in-java
+- 
 
 ## Assignment Reflection
 
