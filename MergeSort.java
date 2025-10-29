@@ -51,7 +51,7 @@ public class MergeSort {
     return queue.remove();
   }
 
-  public static CardPile mergeLists(CardPile listOne, CardPile listTwo) {
+  private static CardPile mergeLists(CardPile listOne, CardPile listTwo) {
     CardPile tempList = new CardPile();
 
     while (!listOne.isEmpty() && !listTwo.isEmpty()) {

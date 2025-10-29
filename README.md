@@ -4,15 +4,18 @@ Your readme should include the following information. Each student needs to subm
 
 ## General Information
 Programming Partner Name (if you'd like to be graded together):
+- N/A
 
 Other Collaborators (and kudos to helpful members of the class):
+- N/A
 
 Any references used besides JavaDoc and course materials:
 - https://stackoverflow.com/questions/2102499/iterating-through-a-list-in-reverse-order-in-java
-- 
 
 ## Assignment Reflection
 
 What did you notice about the differences in runtime across algorithms as you changed the number of cards you were sorting? If you had to split them into "slower" algorithms vs "faster" algorithms, which would you put in each category?
+-
 
 Please reflect on your experience with this assignment. What was most challenging? What was most interesting?
+- Implementing Quicksort, still trying to understand recursive algorithms
