@@ -20,40 +20,21 @@ public class InsertionSortTimer {
   }
 
   public static CardPile sort(CardPile unsorted) {
-    
-    // register the starting configuration with the recorder
-    record.add(unsorted);
-
     // Here is the result list you will be creating
     CardPile sorted = new CardPile();
   
-    // ***********************************************************
-    // Here is where you'll do the "work" of InsertionSort:
-    //   - Use sorted to store the "sorted portion"
-    //   - Don't forget to register the new state with the
-    //     recorder after each card is transferred:
-
-    // ***********************************************************
-
     while (!unsorted.isEmpty()){
       Card randomCard = unsorted.removeFirst();
       ListIterator<Card> scanner = sorted.listIterator(sorted.size());
 
-      record.next();
-      record.add(unsorted);
-
       if (sorted.isEmpty()) {
         sorted.addFirst(randomCard);
 
-        record.next();
-        record.add(sorted);
       } else {
         Card firstCard = sorted.getFirst();
         if (randomCard.compareTo(firstCard) < 0) {
           sorted.addFirst(randomCard);
 
-          record.next();
-          record.add(sorted);
         } else {
             while (scanner.hasPrevious()) {
               Card current = scanner.previous();
@@ -61,8 +42,6 @@ public class InsertionSortTimer {
               if (randomCard.compareTo(current) >= 0) {
                 sorted.insertAfter(randomCard, current);
 
-                record.next();
-                record.add(sorted);
                 break; //exit loop right after inserting randomCard into sorted list
               }
             }

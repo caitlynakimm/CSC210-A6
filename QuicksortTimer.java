@@ -16,4 +16,40 @@ public class QuicksortTimer {
       
     }
   }
+
+  public static CardPile sort(CardPile unsorted) {
+
+    // base case
+    if (unsorted.size() <= 1) {
+      return unsorted;
+    }
+
+    // Here are the two partitions you will be creating
+    CardPile smaller = new CardPile();
+    CardPile bigger = new CardPile();
+
+    Card pivot = unsorted.removeFirst();  // edit this!
+    
+    for (Card card: unsorted) {
+      if (card.compareTo(pivot) < 0) {
+        smaller.add(card);
+      } else if (card.compareTo(pivot) >= 0) {
+        bigger.add(card);
+      }
+    }
+
+    // This will hold the assembled result
+    CardPile result = new CardPile();
+
+    // recursive calls
+    CardPile sortedSmaller = sort(smaller);
+    CardPile sortedBigger = sort(bigger);
+
+    result.append(sortedSmaller);
+    result.add(pivot);
+    result.append(sortedBigger);
+    
+    // return the sorted result here
+    return result;
+  }
 }
