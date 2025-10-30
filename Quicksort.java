@@ -27,11 +27,12 @@ public class Quicksort {
     // ***********************************************************
     Card pivot = unsorted.removeFirst();  // edit this!
     
-    for (Card card: unsorted) {
+    while (!unsorted.isEmpty()) {
+      Card card = unsorted.removeFirst();
       if (card.compareTo(pivot) < 0) {
         smaller.add(card);
-      } else if (card.compareTo(pivot) >= 0) {
-        bigger.add(card);
+      } else {
+         bigger.add(card);
       }
     }
 

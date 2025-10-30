@@ -9,7 +9,6 @@ public class QuicksortTimer {
       
       for (int i = 0; i<Integer.parseInt(args[0]); i++ ) {
         cards.add(deck[(int)(52*Math.random())]);
-        //cards.add(deck[i*52/Integer.parseInt(args[0])]);
       }
 
       sort(cards);
@@ -30,11 +29,12 @@ public class QuicksortTimer {
 
     Card pivot = unsorted.removeFirst();  // edit this!
     
-    for (Card card: unsorted) {
+    while (!unsorted.isEmpty()) {
+      Card card = unsorted.removeFirst();
       if (card.compareTo(pivot) < 0) {
         smaller.add(card);
-      } else if (card.compareTo(pivot) >= 0) {
-        bigger.add(card);
+      } else {
+         bigger.add(card);
       }
     }
 

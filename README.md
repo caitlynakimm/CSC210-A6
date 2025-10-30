@@ -15,7 +15,7 @@ Any references used besides JavaDoc and course materials:
 ## Assignment Reflection
 
 What did you notice about the differences in runtime across algorithms as you changed the number of cards you were sorting? If you had to split them into "slower" algorithms vs "faster" algorithms, which would you put in each category?
-- After running each algorithm, I noticed as I increased the number of cards I was sorting, the ranking of the runtimes from slowest to fastest was the same: insertion sort, selection sort, quicksort, and merge sort. This is ___ to the theoretical computational complexities for each sorting algorithm (O(n^2), O(n^2), O(n log(n)), O(n log(n))).
+- After running each algorithm, I noticed as I increased the number of cards I was sorting, the ranking of the runtimes from slowest to fastest was the same: selection sort, insertion sort, quicksort, and merge sort. This is similar to the theoretical computational complexities for each sorting algorithm, however I noticed quicksort's runtime was higher than merge sort's even though generally quicksort should be faster. I wonder if it is because of how we selected the pivot.
 - I would put selection sort and insertion sort into the "slower" algorithms category and merge sort and quicksort into the "faster" algorithms category.
 
 Please reflect on your experience with this assignment. What was most challenging? What was most interesting?

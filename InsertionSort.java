@@ -21,7 +21,6 @@ public class InsertionSort {
 
     while (!unsorted.isEmpty()){
       Card randomCard = unsorted.removeFirst();
-      ListIterator<Card> scanner = sorted.listIterator(sorted.size());
 
       record.next();
       record.add(unsorted);
@@ -29,31 +28,33 @@ public class InsertionSort {
       if (sorted.isEmpty()) {
         sorted.addFirst(randomCard);
 
-        record.next();
-        record.add(sorted);
       } else {
-        Card firstCard = sorted.getFirst();
-        if (randomCard.compareTo(firstCard) < 0) {
-          sorted.addFirst(randomCard);
+        ListIterator<Card> scanner = sorted.listIterator(sorted.size());
+        boolean inserted = false;
 
-          record.next();
-          record.add(sorted);
-        } else {
-            while (scanner.hasPrevious()) {
-              Card current = scanner.previous();
+        while (scanner.hasPrevious()) {
+          Card current = scanner.previous();
 
-              if (randomCard.compareTo(current) >= 0) {
-                sorted.insertAfter(randomCard, current);
-
-                record.next();
-                record.add(sorted);
-                break; //exit loop right after inserting randomCard into sorted list
-              }
+          if (randomCard.compareTo(current) >= 0) {
+            if (scanner.hasNext()) {
+              scanner.next();
             }
+            scanner.add(randomCard);
+            inserted = true;
+            
+            break; //exit loop right after inserting randomCard into sorted list
+          }
         }
 
+        if (!inserted) {
+          sorted.addFirst(randomCard);
+        }
       }
+
+      record.next();
+      record.add(sorted);
     }
+
 
     // return the sorted result here
     return sorted;
