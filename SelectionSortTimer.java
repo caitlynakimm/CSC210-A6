@@ -1,6 +1,14 @@
 import java.util.ListIterator;
 
+/**
+ * Timed version of Selection Sort algorithm for runtime measure
+ */
 public class SelectionSortTimer {
+
+    /**
+     * Creates random cards and measures sorting time
+     * @param args command line arguments (first argument specifies number of cards)
+     */
     public static void main(String args[]) {
     
     if (args.length<1) {
@@ -18,6 +26,11 @@ public class SelectionSortTimer {
     }
   }
 
+  /**
+   * Sorts a CardPile using Selection Sort algorithm without recording
+   * @param unsorted CardPile to be sorted
+   * @return new CardPile with sorted cards
+   */
   public static CardPile sort(CardPile unsorted) {
 
     // Here is the result list you will be creating

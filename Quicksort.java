@@ -1,7 +1,18 @@
 import java.util.Collections;
 
+/**
+ * Sorts CardPiles by selecting a pivot, partitioning around it, and recursively sorting resulting sublists
+ */
 public class Quicksort {
   
+  /**
+   * Selects pivot, partitions list into elements less than and greater than/equal to pivot, 
+   * recursively sorts partitions, then adds partitions and pivot back together
+   * 
+   * @param unsorted CardPile to be sorted
+   * @param record SortRecorder for visualizing sorting process
+   * @return new CardPile with sorted cards
+   */
   public static CardPile sort(CardPile unsorted, SortRecorder record) {
 
     record.add(unsorted);
@@ -67,6 +78,10 @@ public class Quicksort {
     return result;
   }
 
+  /**
+   * Creates deck of cards, shuffles them, sorts using Quicksort, and shows sorting process visuals
+   * @param args command line arguments
+   */
   public static void main(String args[]) {
     SortRecorder recorder = new SortRecorder();
 

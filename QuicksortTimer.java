@@ -1,4 +1,12 @@
+/**
+ * Timed version of Quicksort for runtime measure
+ */
 public class QuicksortTimer {
+
+    /**
+     * Main method for timing Quicksort performance
+     * @param args number of cards to sort
+     */
     public static void main(String args[]) {
     
     if (args.length<1) {
@@ -16,6 +24,11 @@ public class QuicksortTimer {
     }
   }
 
+  /**
+   * Sorts CardPile using Quicksort without recording
+   * @param unsorted CardPile to be sorted
+   * @return new CardPile with sorted cards
+   */
   public static CardPile sort(CardPile unsorted) {
 
     // base case

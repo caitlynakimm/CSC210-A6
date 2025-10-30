@@ -1,8 +1,19 @@
 import java.util.Collections;
 import java.util.ListIterator;
 
+/**
+ * Builds sorted list by taking cards from unsorted pile 
+ * and placing them into the sorted pile at correct position
+ */
 public class InsertionSort {
   
+  /**
+   * Sorts a pile using insertion sort algorithm with visual records
+   * Processes cards one by one, inserting each into the correct position
+   * @param unsorted CardPile to be sorted
+   * @param record SortRecorder for visualizing sorting process
+   * @return new CardPile with sorted cards
+   */
   public static CardPile sort(CardPile unsorted, SortRecorder record) {
     
     // register the starting configuration with the recorder
@@ -60,6 +71,10 @@ public class InsertionSort {
     return sorted;
   }
 
+  /**
+   * Creates deck of cards, shuffles them, sorts using InsertionSort, and shows sorting process visuals
+   * @param args command line arguments
+   */
   public static void main(String args[]) {
     SortRecorder recorder = new SortRecorder();
 

@@ -1,6 +1,14 @@
 import java.util.ListIterator;
 
+/**
+ * Timed version of Insertion Sort algorithm for runtime measure
+ */
 public class InsertionSortTimer {
+
+    /**
+     * Main method for timing Insertion Sort performance
+     * @param args number of cards to sort
+     */
     public static void main(String args[]) {
     
     if (args.length<1) {
@@ -18,6 +26,11 @@ public class InsertionSortTimer {
     }
   }
 
+  /**
+   * Sorts a CardPile using Insertion Sort algorithm without recording
+   * @param unsorted CardPile to be sorted
+   * @return new CardPile with sorted cards
+   */
   public static CardPile sort(CardPile unsorted) {
     // Here is the result list you will be creating
     CardPile sorted = new CardPile();

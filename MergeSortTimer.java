@@ -1,6 +1,14 @@
 import java.util.ArrayDeque;
 
+/**
+ * Timed version of MergeSort algorithm for runtime measure
+ */
 public class MergeSortTimer {
+
+    /**
+     * Main method for timing Merge Sort performance
+     * @param args number of cards to sort
+     */
     public static void main(String args[]) {
     
     if (args.length<1) {
@@ -18,6 +26,11 @@ public class MergeSortTimer {
     }
   }
 
+  /**
+   * Sorts CardPile using Merge Sort without recording
+   * @param unsorted CardPile to sort
+   * @return CardPile with sorted cards
+   */
   public static CardPile sort(CardPile unsorted) {
 
     ArrayDeque<CardPile> queue = new ArrayDeque<CardPile>();
@@ -43,6 +56,12 @@ public class MergeSortTimer {
     return queue.remove();
   }
 
+  /**
+   * Merges two sorted CardPiles into one sorted pile
+   * @param listOne first sorted pile
+   * @param listTwo second sorted pile
+   * @return single merged sorted pile
+   */
   private static CardPile mergeLists(CardPile listOne, CardPile listTwo) {
     CardPile tempList = new CardPile();
 

@@ -1,8 +1,21 @@
 import java.util.ArrayDeque;
 import java.util.Collections;
 
+/**
+ * Recursively splits list into singleton piles
+ * and merges them back in sorted order
+ */
 public class MergeSort {
   
+  /**
+   * Starts by creating singleton piles per card, then repeatedly
+   * merges pairs of sorted piles until only one sorted pile is left
+   * Each merge operation is recorded
+   * 
+   * @param unsorted CardPile to be sorted
+   * @param record SortRecorder for visualizing each merge step
+   * @return new CardPile with sorted cards
+   */
   public static CardPile sort(CardPile unsorted, SortRecorder record) {
     
     // register the starting configuration with the recorder
@@ -51,6 +64,14 @@ public class MergeSort {
     return queue.remove();
   }
 
+  /**
+   * Combines two lists by comparing their front elements
+   * and inserts them into new list to get a single sorted CardPile
+   * 
+   * @param listOne first sorted CardPile to merge
+   * @param listTwo second sorted CardPile to merge
+   * @return new CardPile with all elements from both input piles in sorted order
+   */
   private static CardPile mergeLists(CardPile listOne, CardPile listTwo) {
     CardPile tempList = new CardPile();
 
@@ -73,6 +94,10 @@ public class MergeSort {
     return tempList;
   }
 
+  /**
+   * Creates deck of cards, shuffles them, sorts them using MergeSort, and shows merging process via visual records
+   * @param args command line arguments
+   */
   public static void main(String args[]) {
     SortRecorder recorder = new SortRecorder();
 
